@@ -4,8 +4,8 @@ DirtySkypeChatParse
 few utility scripts for skype parsing, summarizing using bash/awk/sed/grep/sort/uniq...
 
 
-How to ket daily keywords
--------------------------
+How to get keywords by date
+---------------------------
 
 
 chatsum.txt is the copy paste of the skype chat.
@@ -36,6 +36,8 @@ cat chatsum.txt | ./parse-skype | ./get-time-msgcnt
 2011-09-25 12-50-AM 9-39-AM     2
 2011-09-26 3-23-AM 10-44-PM     140
 2011-09-27 7-21-AM 11-22-AM     33
+
+You get date, start time, end time, number of messages.
 
 
 Print day
