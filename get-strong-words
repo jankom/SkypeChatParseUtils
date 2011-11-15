@@ -1,0 +1,2 @@
+#!/bin/bash
+./words-to-lines | ./get-freq | ./get-common

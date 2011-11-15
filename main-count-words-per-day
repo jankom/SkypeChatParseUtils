@@ -1,0 +1,4 @@
+#!/bin/bash
+#USAGE: 
+# cat chatsum.txt | ./main-count-words-per-day | tee data_words-per-day
+./parse-skype | ./dates-concat | ./get-line-wc

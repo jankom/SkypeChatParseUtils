@@ -1,0 +1,54 @@
+DirtySkypeChatParse
+===================
+
+few utility scripts for skype parsing, summarizing using bash/awk/sed/grep/sort/uniq...
+
+
+How to ket daily keywords
+-------------------------
+
+
+chatsum.txt is the copy paste of the skype chat.
+
+
+$ cat chatsum.txt | ./main-count-global-words |  tee data_global_words.d
+
+$ cat chatsum.txt | ./main-count-words-per-day | tee data_words-per-day.d
+
+$ cat data_words-per-day.d | ./get-kws data_global_words.d 0.7 0 > data_keywords_per_day.d
+
+2011-07-18 : style stupid shows hello globals exact elements choose bah act 
+2011-07-19 : separate security rainy inthe fall extended 
+2011-07-20 : weird vanished theirs taxes rights recuperate protected oula nerd mysql manage edited databases confirmation categories accounts 
+2011-07-21 : password root ftp btw
+
+
+You get the tfidf-ed keywords per day in the last file. The count-global-words is quite slow procedure. Most probably could be improved vastly.
+
+How to get daily stats
+----------------------
+
+cat chatsum.txt | ./parse-skype | ./get-time-msgcnt
+
+2011-09-22 7-05-PM 7-19-PM      13
+2011-09-23 7-11-AM 6-49-PM      3
+2011-09-24 10-25-AM 10-25-AM    1
+2011-09-25 12-50-AM 9-39-AM     2
+2011-09-26 3-23-AM 10-44-PM     140
+2011-09-27 7-21-AM 11-22-AM     33
+
+
+Print day
+---------
+
+$ cat chatsum.txt | ./parse-skype | ./print-day 2011-11-12
+
+|2011-11-12|7-36-PM|jane| hello
+|2011-11-12|7-37-PM|janko itm| hi
+|2011-11-12|7-37-PM|jane| how are you doing
+
+
+Random Ideas
+------------
+
+We could extract links easily.

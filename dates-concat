@@ -1,0 +1,2 @@
+#!/bin/bash
+awk -F'[|]' '{ cnt[$2] ++ ; base[$2] = (base[$2] "  " $5)  } END { for (i in base) { printf "%s|%s|%s\n", i, cnt[i], base[i] } }' | sort

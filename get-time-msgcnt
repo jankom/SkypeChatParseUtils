@@ -1,0 +1,10 @@
+#!/bin/bash
+awk -F'[|]' '
+{ 
+ cnt[$2] ++
+ if (!start[$2]) start[$2] = $3
+ end[$2] = $3 
+}
+END { 
+ for (i in cnt) { printf "%s %s %s\t%s\n", i, start[i], end[i], cnt[i] } 
+}' | sort
