@@ -26,7 +26,7 @@ $ cat data_words-per-day.d | ./get-kws data_global_words.d 0.7 0 > data_keywords
 
 You get the tfidf-ed keywords per day in the last file. The count-global-words is very slow. Most probably could be improved vastly. You pipe in the words per day and give global words file as argument, second argument is minimal tfidf score, third is 1 if you want to see the score, 0 if not.
 
-In my case chat.txt was 220kB and output data_keywords_per_day.txt was 2.7kB so alsmot 100x reduction of text while the core activity was "visible" :).
+- chat.txt was 220kB, data_keywords_per_day.d was 2.7kB so almost 100x reduction of text while the core activity was still relatively "visible" :).
 
 
 How to get daily stats
