@@ -11,11 +11,12 @@ How to get keywords by date
 chatsum.txt is the copy paste of the skype chat.
 
 
-$ cat chatsum.txt | ./main-count-global-words |  tee data_global_words.d
+$ cat chat.txt | ./main-count-global-words |  tee data_global_words.d
 
-$ cat chatsum.txt | ./main-count-words-per-day | tee data_words-per-day.d
+$ cat chat.txt | ./main-count-words-per-day | tee data_words-per-day.d
 
 $ cat data_words-per-day.d | ./get-kws data_global_words.d 0.7 0 > data_keywords_per_day.d
+
 
 2011-07-18 : style stupid shows hello globals exact elements choose bah act 
 2011-07-19 : separate security rainy inthe fall extended 
@@ -23,7 +24,9 @@ $ cat data_words-per-day.d | ./get-kws data_global_words.d 0.7 0 > data_keywords
 2011-07-21 : password root ftp btw
 
 
-You get the tfidf-ed keywords per day in the last file. The count-global-words is very slow. Most probably could be improved vastly. You pipe in the words per day and give global words file as argument, second argument is minila tfidf score, third is 1 if you want to see the score, 0 if not.
+You get the tfidf-ed keywords per day in the last file. The count-global-words is very slow. Most probably could be improved vastly. You pipe in the words per day and give global words file as argument, second argument is minimal tfidf score, third is 1 if you want to see the score, 0 if not.
+
+In my case chat.txt was 220kB and output data_keywords_per_day.txt was 2.7kB so alsmot 100x reduction of text while the core activity was "visible" :).
 
 
 How to get daily stats
