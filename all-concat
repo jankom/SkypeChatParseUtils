@@ -1,15 +1,8 @@
 #!/bin/bash
-# count the lines per days
+
 awk -F'[|]' '
 {   
  cmd = "./get-unique-words "
  ("echo \"" $5 "\" | " cmd) | getline var 
- # line1 = $1 " " $2 " " var;
- # close("cat")
  printf " %s \n", var
- #base[$2] = (base[$2] " " var)  
-} 
-#END { 
-# for (i in base) { printf " %s ", base[i] } 
-#}'
-
+}'

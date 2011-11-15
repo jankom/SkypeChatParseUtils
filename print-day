@@ -1,4 +1,5 @@
 #!/bin/bash
+
 awk -v day=$1 -F'[|]' '
 { 
   if ($2 == day) print

@@ -1,4 +1,5 @@
 #!/bin/bash
+
 awk -F'[|]' '
 { 
  cnt[$2] ++

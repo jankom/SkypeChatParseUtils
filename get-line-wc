@@ -1,10 +1,8 @@
 #!/bin/bash
-# count the lines per days
+
 awk -F'[|]' '{ 
-  #print $1 $2
   cmd = "./get-strong-words ";
   while (( ("echo \"" $3 "\" | " cmd) | getline var ) > 0 )
    print $1 " " $2 " " var;
-  close("cat")
-} 
-END {   close(cmd); }'
+  close(cmd)
+}'

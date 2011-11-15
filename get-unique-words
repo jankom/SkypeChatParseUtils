@@ -1,4 +1,3 @@
 #!/bin/bash
-#./words-to-lines | tr \\n " "
+
 ./words-to-lines | sort | uniq | tr \\n " "
-#cat

@@ -1,6 +1,5 @@
 #!/bin/bash
 #USAGE: 
 # cat chatsum.txt | ./main-count-global-words |  tee data_global_words.d
-#ORIG 
+
 ./parse-skype | ./all-concat | ./words-to-lines | ./get-freq | sort -n --key=2
-#./parse-skype | ./all-concat

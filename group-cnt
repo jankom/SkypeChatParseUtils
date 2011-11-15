@@ -1,3 +1,3 @@
 #!/bin/bash
-# count the lines per days
+
 awk -F'[|]' '{ base["" $2] ++ } END { for (i in base) { printf "%s %d\n", i, base[i] } }' | sort
