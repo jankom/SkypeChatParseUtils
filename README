@@ -23,7 +23,8 @@ $ cat data_words-per-day.d | ./get-kws data_global_words.d 0.7 0 > data_keywords
 2011-07-21 : password root ftp btw
 
 
-You get the tfidf-ed keywords per day in the last file. The count-global-words is quite slow procedure. Most probably could be improved vastly.
+You get the tfidf-ed keywords per day in the last file. The count-global-words is very slow. Most probably could be improved vastly. You pipe in the words per day and give global words file as argument, second argument is minila tfidf score, third is 1 if you want to see the score, 0 if not.
+
 
 How to get daily stats
 ----------------------
@@ -53,4 +54,4 @@ $ cat chatsum.txt | ./parse-skype | ./print-day 2011-11-12
 Random Ideas
 ------------
 
-We could extract links easily.
+We could extract links if needed. Added simple search (via grep).
